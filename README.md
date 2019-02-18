@@ -14,25 +14,55 @@ We designed [Symmetric Interaction Calculus](https://github.com/maiavictor/symme
 
 ## 2019
 
-In 2019, our goal is to develop Formality dapps and smart-contracts, as well as Moonad, a platform for developing and running those. This includes:
+Our first goal in 2019 is to release Moonad, a platform similar to Remix, where users will be able to download and edit Formality code, run live apps and build smart-contracts. A very early (started a few days ago) version is available at [https://moonad.org/](https://moonad.org). Someday around March it will be released. After that, the team will focus mostly on developing Formality libraries and proofs, as well as improving Moonad with more features. There are many things that we wish to do:
 
-- An efficient Formality-to-EVM compiler.
+### On Formality
 
-- Ethernal, a separate blockchain capable of running Formality contracts natively.
+- Formality-to-EVM compiler (high priority)
 
-- On Moonad: a rich Formality IDE (syntax highlighting, hyperlinks, proof checking, proof search, etc.).
+- Base libraries (numbers, lists and other structures, functors, monads, algebra, equality...)
 
-- On Moonad: a renderer for interactive Formality dapps with monadic blockchain access.
+- Crypto libraries (hashes, signatures, encryption, merkle structures, EVM, ...)
 
-- On Formality: completion of its design and specificaition.
+- Rendering libraries (colors, vector graphs, fonts, matrices, quaternions...)
 
-- On Formality: a plenty of example smart-contracts and dapps.
+- Formality-in-Formality
 
-- Documentation and learning material.
+- GPU evaluators (CUDA, OpenCL, Metal...).
 
-### Q1. 2019
+- Documentation and learning materials
 
-#### Summary
+- Several smart-contracts / DApps on it, like:
+
+    - A "hello world" calculuator that proves it does the algebra correctly
+
+    - A TheDAO-like app that proves it can't be stolen
+
+    - An exchange that proves you're always able to withdrawal your holdings
+
+    - Lottery that proves its fairness
+
+    - Games that prove invariants (nobody enters certain area without certain items, etc.)
+
+    - Whatever our creativity allows us to think
+
+### On Moonad
+
+- A rich IDE (syntax highlighting, hyperlinks, proof search, Swarm/IPFS imports, etc.)
+
+- Improve the DApp renderer: sound, image, animations, etc.
+
+- Ethereum account management (anything MyCrypto doe)
+
+- Ethereum contract interaction (Remix-like features like testing, deploying Formality contracts, etc.)
+
+- Ethereum blockchain explorer (but displaying proofs!)
+
+- And so on
+
+We don't want to commit to any of those in any particular order, though. I find it is more productive to just develop what is needed in order of priority, which may shift depending on community reception, future ideas, marketing insights and so on. But we could arrange a more rigid timeline if demanded.
+
+### Worklog
 
 Victor and Gabriel focused in completing the design of Formality. Getting it right from the beginning is considered extremelly important because, once a vast amount of libraries are built upon it, there is no going back. As such, Formaliy went through several redesigns in a short timespan. Eventually, we settled in a minimalist design very close to the Calculus of Constructions, which he called [ESCoC](https://github.com/maiavictor/escoc). This solves several earlier problems, including implementation complexity (it is down from 3500 to 500 lines of code), expressivity (several datatype-related  limitations were solved by adopting inductive λ-encodings) and security (implementing a termination checker is now much more feasible). The almost-final version is available [here](https://github.com/moonad/formality), including several [libraries and numerical proofs](https://github.com/moonad/Formality/blob/master/main.formality) built using Formality itself.
 
