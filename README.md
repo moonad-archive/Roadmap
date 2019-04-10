@@ -14,35 +14,25 @@ We designed [Symmetric Interaction Calculus](https://github.com/maiavictor/symme
 
 ## 2019
 
-### Main Accomplishments so far:
+### Q1 Accomplishments
 
-- Redesign Formality based on [ESCoC](https://github.com/MaiaVictor/ESCoC).
+Gabriel and Victor spent this trimester polishing [Formality](https://github.com/MaiaVictor/Formality). We went from the relatively big (~3k LOC) language that was presented on Devcon to a much smaller (~800 LOC) one, which is relevant because one of the goals of the project is to let Formality be, rather than a monolithic reference implementation, a simple specification that anyone can implement independently. We considered several candidate core languages, such as [ESCoC](https://github.com/MaiaVictor/ESCoC), and explored each one extensively, for example, implementing several [proofs and libraries](https://github.com/moonad/formality-stdlib), in order to arrive at the ideal form, in an extensive filtering and polishing process. We also worked on missing aspects: consistency and complete NASIC compatibility. This isn't proven yet, but we have a proper set of restrictions that make the language terminating and fully NASIC compatible. We're starting an Agda formalization, and an informal specification is available on the repository.
 
-- Prove ESCoC can derive induction for the main λ-encodings: [Scott](https://github.com/moonad/Formality/blob/master/examples/Nat.fm), [Parigot](https://github.com/moonad/Formality/blob/master/examples/Rat.fm), [Church](https://github.com/moonad/Formality/blob/master/examples/Cat.fm).
+We also started designing [Moonad](https://github.com/moonad/moonad), and developed a [prototypal web client](https://moonad.org/). Since Formality-related work was taking most of our time, though, we decided to put Moonad on hold indefinitely, and focus on the language. We consider this a loss, though, because Moonad could be hugely impacting, as we explained here. We also paused the development of the GPU runtime, in order to focus on Ethereum (EVM & EWASM) targets. This, too, is a loss, as it could be hugely impacting. We believe, with proper investment, such runtime could make Formality one of the fastest functional (if not general) languages on the market. We are currently considering external funding sources to develop those things.
 
-- Implement several proofs and libraries ([formality-stdlib](https://github.com/moonad/formality-stdlib)).
+Leonardo initially spent his time on the desktop (Windows/OSX/Linux) client for Moonad. Since the team decided to pause it, though, it didn’t make sense to continue this development, so he moved to work on the [NASIC → EVM](https://github.com/moonad/Nasic-to-EVM) compiler, which is the missing piece to run Formality smart-contracts on Ethereum. He had some trouble due to an EthereumJS SEGFAULT issue, which slowed down the development. Right now, the code is mostly done, but there are still a few bugs, which he is investigating, and writing a wide test suite. Once it is fully operational and tested, we’ll build an ABI around it, allowing Formality smart-contracts to be deployed on Ethereum and to interact with existing contracts.
 
-- A demo of [Moonad](https://github.com/moonad/moonad) ([moonad.org](https://moonad.org/)).
+Maisa was initially assigned to develop (iOS/Android) clients for Moonad. Since, again, the team decided to pause it, she, too, moved to Formality. She developed a [visual animator](https://github.com/moonad/Nasic-Render) for NASIC’s operations on HTML5, and worked with freelancers on our visual identity, logo and landing page. Since she isn’t very experienced with theorem proving (mobile being her main skill), she is currently studying Agda to futurely help with Formality development. Her next goals may include: developing demonstrative Formality contracts, writing posts on how it works, developing documentation, working on our visual identity and landing page.
 
 ### Current focus
 
-Our first goal in 2019 was to release Moonad, a minimal, Linux-like operating system based on Ethereum/Formality. On it, users would be able to load, check and run Formality code from IPFS/Swarm, run graphical applications (such as text editors), deploy formally verified smart-contracts, etc. While an initial version is available on https://moonad.org/, this project is now paused due to time and resource constraints. We're now focusing on the more immediate goal of polishing Formality, which we believe is more valuable on the short term. Our main priorities now are:
+2. Explore Formality, implement standard libraries and proofs. (Gabriel and Victor)
 
-1. Providing a semantics for Formality and identifying a consistent fragment. (Victor)
-
-2. Growing Formality's libraries with important datatypes, algorithms and proofs. (Gabriel and Victor)
-
-3. The Formality-to-EVM compiler. (Leonardo)
+3. Implement the Formality-to-EVM compiler. (Leonardo)
 
 4. Formality's landing page, example applications, documentation. (Maisa)
 
 ## Comments
-
-### Dilema: abandoning Moonad or externally funding it?
-
-Moon's original idea evolved from a simple browser to something much bigger, a decentralized operating system, Moonad, based on Formality, Swarm/IPFS, Ethereum, etc. Sadly, we also realized building it would require increasing the team's size considerably, and we obviously can't use EF's resources for that. As such, we've decided to downgrade our internal goals, and now we'll focus exclusively on Formality and its EVM/ewasm targets, which are much more relevant and directly appliable to Ethereum.
-
-When it comes to Moonad, though, I still think it is an amazing concept that deserves to be developed. For that reason, I'm writting the [Moonad Manifesto](https://github.com/moonad/manifesto), an informal document explain all of its "why"s. We're considering if we should abandon Moonad entirely, or pursue external funding in order to develop all the non-Ethereum-relevant pieces necessary to build it.
 
 ### Why is Formality important to Ethereum?
 
