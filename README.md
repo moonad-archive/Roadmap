@@ -24,13 +24,18 @@ Leonardo initially spent his time on the desktop (Windows/OSX/Linux) client for 
 
 Maisa was initially assigned to develop (iOS/Android) clients for Moonad. Since, again, the team decided to pause it, she, too, moved to Formality. She developed a [visual animator](https://github.com/moonad/Nasic-Render) for NASIC’s operations on HTML5, and worked with freelancers on our visual identity, logo and landing page. Since she isn’t very experienced with theorem proving (mobile being her main skill), she is currently studying Agda to futurely help with Formality development. Her next goals may include: developing demonstrative Formality contracts, writing posts on how it works, developing documentation, working on our visual identity and landing page.
 
-### Current focus
+### Q1 Accomplishments
 
-2. Explore Formality, implement standard libraries and proofs. (Gabriel and Victor)
+Briefly (will elaborate later):
 
-3. Implement the Formality-to-EVM compiler. (Leonardo)
+1. Restructured [Formality](https://github.com/moonad/formality) (the typed proof language) into many sub-projects, including [Formality-Core](https://github.com/moonad/formality-core), which is our untyped, optimal functional compile target. Formality-Core is amazing and very stable right now, and our plan is to build Formality itself on it. Please check the repository!
 
-4. Formality's landing page, example applications, documentation. (Maisa)
+2. NASIC to EVM compiler working.
+
+3. Tons of Formality-Core and Formality libs and proofs.
+
+4. Working on starting our own company to develop Formality and its related projects.
+
 
 ## Comments
 
