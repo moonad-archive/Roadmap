@@ -4,43 +4,69 @@
 
 ### Main Accomplishments:
 
-#### Formality
 
-We designed [Formality](https://github.com/moonad/formality), a minimal programming language and proof assistant. Formality can be used not only to develop everyday applications such as dapps and smart-contracts, but to propose and prove mathematical invariants about those. If there is a huge security gap between a weakly typed language like JavaScript to strongly typed ones like TypeScript, Rust and Haskell, then there is an equally huge security gap between those and a proof language like Idris, Coq and Agda. Sadly, those languages weren't build with smart-contracts and dapps and mind, and, as such, are somewhat unpractical for those applications. Formality was designed for Ethereum, which means it focuses on important features those don't, in special minimality and efficiency.
+- Designed the first version of [Formality](https://github.com/moonad/formality) with the aim of developing an efficient proof language for smart-contracts and applications. It included native datatypes and a prototypal interaction-net compiler.
 
-#### Symmetric Interaction Calculus (SIC)
+- Designed [Symmetric Interaction Calculus](https://github.com/maiavictor/symmetric-interaction-calculus), a parallel model of computation with applications to efficient, optimal and parallel evaluation of functional programs.
 
-We designed [Symmetric Interaction Calculus](https://github.com/maiavictor/symmetric-interaction-calculus), a programming language isomorphic to Symmetric Interaction Combinators. Studying and exploring it gave us insights about Lamping's [abstract algorithm](https://github.com/maiavictor/abstract-algorithm), the optimal implementation of functional programming languages. This is relevant because SIC is the perfect low-level compile target for high-level languages like Formality: it is inherently parallel, garbage-collection free and beta-optimal. It allows us to run our programs efficiently on the front-end, and cheaply inside a resource-sensitive environment like the EVM. Moreover, through this exploration, we managed to develop techniques to optimize certain functional idioms in an unprecedented manner, as detailed [on this article](https://medium.com/@maiavictor/solving-the-mystery-behind-abstract-algorithms-magical-optimizations-144225164b07).
+- Explored it and [wrote a blog post](https://medium.com/@maiavictor/solving-the-mystery-behind-abstract-algorithms-magical-optimizations-144225164b07) detailing our insights.
 
 ## 2019
 
 ### Q1 Accomplishments
 
-Gabriel and Victor spent this trimester polishing [Formality](https://github.com/MaiaVictor/Formality). We went from the relatively big (~3k LOC) language that was presented on Devcon to a much smaller (~800 LOC) one, which is relevant because one of the goals of the project is to let Formality be, rather than a monolithic reference implementation, a simple specification that anyone can implement independently. We considered several candidate core languages, such as [ESCoC](https://github.com/MaiaVictor/ESCoC), and explored each one extensively, for example, implementing several [proofs and libraries](https://github.com/moonad/formality-stdlib), in order to arrive at the ideal form, in an extensive filtering and polishing process. We also worked on missing aspects: consistency and complete NASIC compatibility. This isn't proven yet, but we have a proper set of restrictions that make the language terminating and fully NASIC compatible. We're starting an Agda formalization, and an informal specification is available on the repository.
+- Implemented and explored [Cedille-Core](https://github.com/MaiaVictor/Cedille-Core), a minimal proof language designed by Aaron Stump.
 
-We also started designing [Moonad](https://github.com/moonad/moonad), and developed a [prototypal web client](https://moonad.org/). Since Formality-related work was taking most of our time, though, we decided to put Moonad on hold indefinitely, and focus on the language. We consider this a loss, though, because Moonad could be hugely impacting, as we explained here. We also paused the development of the GPU runtime, in order to focus on Ethereum (EVM & EWASM) targets. This, too, is a loss, as it could be hugely impacting. We believe, with proper investment, such runtime could make Formality one of the fastest functional (if not general) languages on the market. We are currently considering external funding sources to develop those things.
+- Based on it, developed a 800 LOC type-theory compatible with optimal reductions, previously called Formality, which we now call [Elementary Affine Type Theory (EA-TT)](https://github.com/moonad/elementary-affine-type-theory).
 
-Leonardo initially spent his time on the desktop (Windows/OSX/Linux) client for Moonad. Since the team decided to pause it, though, it didn’t make sense to continue this development, so he moved to work on the [NASIC → EVM](https://github.com/moonad/Nasic-to-EVM) compiler, which is the missing piece to run Formality smart-contracts on Ethereum. He had some trouble due to an EthereumJS SEGFAULT issue, which slowed down the development. Right now, the code is mostly done, but there are still a few bugs, which he is investigating, and writing a wide test suite. Once it is fully operational and tested, we’ll build an ABI around it, allowing Formality smart-contracts to be deployed on Ethereum and to interact with existing contracts.
+- Based on [Symmetric Interaction Combinators](https://pdfs.semanticscholar.org/1731/a6e49c6c2afda3e72256ba0afb34957377d3.pdf), developed [Elementary Affine Net (EA-Net)](https://github.com/moonad/elementary-affine-net), an interaction net system and compile target for EA-TT. 
 
-Maisa was initially assigned to develop (iOS/Android) clients for Moonad. Since, again, the team decided to pause it, she, too, moved to Formality. She developed a [visual animator](https://github.com/moonad/Nasic-Render) for NASIC’s operations on HTML5, and worked with freelancers on our visual identity, logo and landing page. Since she isn’t very experienced with theorem proving (mobile being her main skill), she is currently studying Agda to futurely help with Formality development. Her next goals may include: developing demonstrative Formality contracts, writing posts on how it works, developing documentation, working on our visual identity and landing page.
+- [Stated and proved several theorems on EA-TT]([proofs and libraries](https://github.com/moonad/Elementary-Affine-Type-Theory-libs)), to validate and explore its expressivity.
 
-### Q1 Accomplishments
+- Wrote a [blog post](https://medium.com/@maiavictor/introduction-to-formality-part-1-7ae5b02422ec) introducing it. 
 
-Briefly (will elaborate later):
+- Started working on the [Moonad Operating System](https://github.com/moonad/moonad), but stopped to focus in developing an efficient proof language.
 
-1. Restructured [Formality](https://github.com/moonad/formality) (the typed proof language) into many sub-projects, including [Formality-Core](https://github.com/moonad/formality-core), which is our untyped, optimal functional compile target. Formality-Core is amazing and very stable right now, and our plan is to build Formality itself on it. Please check the repository!
+- Started a [compiler to the EVM](https://github.com/moonad/Elementary-Affine-Net-to-EVM). 
 
-2. NASIC to EVM compiler working.
+- Developed a HTML/JS [animation tool](https://github.com/moonad/Elementary-Affine-Net-Render) for EA-Net.
 
-3. Tons of Formality-Core and Formality libs and proofs.
+### Q2 Accomplishments
 
-4. Working on starting our own company to develop Formality and its related projects.
+- Developed [Elementary-Affine-Core (EA-TT)](https://github.com/moonad/elementary-affine-core), the untyped version of EA-TT.
 
+- Restructured [Formality](https://github.com/moonad/formality) (the typed proof language) into many sub-projects:
+
+  - [Formality-Core (FM-TT)](https://github.com/moonad/formality-core): Formality's untyped core, which extends EA-Core with numbers.
+
+  - [Formality-Net (FM-Net)](https://github.com/moonad/formality-net): Formality's interaction-net, an efficient compile target which extends EA-Net with numbers.
+
+  - Formality-Type-Theory (FM-TT): Formality's underlying type theory, which extends EA-TT with numbers (ongoing).
+
+- Wrote several [FM-Core libraries](https://github.com/moonad/Formality-Core/tree/master/examples), including:
+
+  - In-place array library, thanks to linear types!
+
+  - Lists, numbers, tuples and other core FP libs.
+
+  - Ongoing implementation of FM-Core within itself, which will be the base of Formality-Lang.
+
+  - Keccak!
+
+  - A toy game as a demo of its power (and of non-Turing-complete languages!).
+
+- Finished the [EA-Net->EVM](https://github.com/moonad/Elementary-Affine-Net-to-EVM) compiler. Still needs optimizations. FM-Net next.
+
+- A prototypal [C-backend](https://github.com/moonad/Formality-Net/blob/master/c/fm-net) for FM-Net. (Soon we'll have C++/LLVM experts optimizing it!)
+
+- Wrote a [Github Wiki](https://github.com/moonad/Formality-Core/wiki) for Formality-Core.
+
+### Current Status (updated: June 22, 2019)
+
+Right now, we're focusing in graduating from the EF and creating our own company. The team size is expected to grow from 4 to about 10 people. Our mission will be to develop Formality as an efficient, user-friendly proof language suitable to write smart-contracts, graphical applications, servers and so on.
 
 ## Comments
 
 ### Why is Formality important to Ethereum?
 
-Formality is valuable to Ethereum because it is a proof language that compiles to the EVM/ewasm, and proofs would have avoided most, if not all, the huge hacks we had. Not everyone agrees with this, though. Many, including [Vitalik](https://www.reddit.com/r/ethereum/comments/7bdm1g/so_can_we_again_have_a_talk_about_formal/dphq7qe/), would argue that, in order for formal proofs to work, you need a "specification", which can, itself, have bugs. While that is absolutely true, it, in practice, is mostly irrelevant. It takes a little bit of practice in proof languages like Agda to realize how those are indeed an enourmous, unprecedented leap in security.
-
-The point that is often missing is that specifications can be much simpler than the code implementing them. For example, it is much easier to write, in code, *"the shortest path between two points in a voxel space"*, than to develop an actual algorithm performing that operation. The catch is that, once an human verifies a small specification, then the machine can verify that the (possibly huge) corresponding implementation is 100% correct and bug-free, no doubts left, no tests needed. And that's amazing! I stand on my grounds that, once we start developing smart contracts in Formality, DAO-like events will be a thing of the past.
+Proof languages merge mathematics and programming in a single language. They are secure. Ethereum needs security. We don't have efficient proof languages. Ethereum needs efficienty. Formality is a efficient and Formality is proof language. Thus Ethereum needs Formality. QED. (TODO: formal proof)
