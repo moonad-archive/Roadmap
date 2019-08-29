@@ -63,4 +63,4 @@
 
 ### Q3 Accomplishments
 
-Way too many things to type here now :) Formality is getting mature, nearing a stable 0.1 release, its base libs are growing, everything is great. Check out https://github.com/formality! Yay. (For any questions, feel free to open an issue here.)
+Way too many things to type here now :) Formality is getting mature, nearing a stable 0.1 release, its base libs are growing, everything is great. Check out https://github.com/moonad/formality! Yay. (For any questions, feel free to open an issue here.)
