@@ -61,12 +61,6 @@
 
 - Wrote a [Github Wiki](https://github.com/moonad/Formality-Core/wiki) for Formality-Core.
 
-### Current Status (updated: June 22, 2019)
+### Q3 Accomplishments
 
-Right now, we're focusing in graduating from the EF and creating our own company. The team size is expected to grow from 4 to about 10 people. Our mission will be to develop Formality as an efficient, user-friendly proof language suitable to write smart-contracts, graphical applications, servers and so on.
-
-## Comments
-
-### Why is Formality important to Ethereum?
-
-Proof languages merge mathematics and programming in a single language. They are secure. Ethereum needs security. We don't have efficient proof languages. Ethereum needs efficienty. Formality is a efficient and Formality is proof language. Thus Ethereum needs Formality. QED. (TODO: formal proof)
+Way too many things to type here now :) Formality is getting mature, nearing a stable 0.1 release, its base libs are growing, everything is great. Check out https://github.com/formality! Yay. (For any questions, feel free to open an issue here.)
